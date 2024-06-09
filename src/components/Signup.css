@@ -1,0 +1,21 @@
+.main{
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* background-color: brown; */
+    
+}
+.sub-main{
+    background-color: white;
+    width: 25px;
+}
+.signup-title{
+    align-items: center;
+}
+.form-styles{
+    margin-bottom: 3px;
+    column-gap: 30px;
+}
+label.thicker {
+    font-weight: 900;
+  }
