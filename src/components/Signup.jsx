@@ -1,62 +1,23 @@
-import React, { useState } from 'react'
-import "./Signup.css"
-import { Link } from "react-router-dom";
-import axios from 'axios'
-import { useNavigate } from "react-router-dom";
-
+import React from 'react'
+import { Link } from 'react-router-dom'
 const Signup = () => {
-
-    const [name, setName] = useState()
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
-    // const navigate = useNavigate();
     return (
-        <div className='main'>
-            <div className="sub-main"></div>
-            <h2 className='signup-title'>Sign Up</h2>
-            <br />
-            {/* <form action="">
-                <div className='form-styles'>
-                    <label htmlFor="name">
-                        <strong>Name</strong>
-                    </label>
-                    <input type="text"
-                        placeholder='Enter Name'
-                        autoComplete='off'
-                        name='name'
-                        // className='form-control rounded-0'
-                        onChange={(e) => setName(e.target.value)}
-                    />
+        <div className='p-3 max-w-lg mx-auto'>
+            <h1 className='text-3xl text-center font-semibold my-7'>Signup</h1>
+            <form className='flex flex-col gap-4' >
+                <input type="text" placeholder='username...' id='username' className='bg-slate-400 p-3 rounded-lg' />
+                <input type="email" placeholder='email...' id='email' className='bg-slate-400 p-3 rounded-lg' />
+                <input type="password" placeholder='password...' id='password' className='bg-slate-400 p-3 rounded-lg' />
 
-                    <label htmlFor="email">
-                        <strong>Email</strong>
-                    </label>
-                    <input type="text"
-                        placeholder='Enter Email'
-                        autoComplete='off'
-                        name='email'
-                        className='form-control rounded-0'
-                        onChange={(e) => setEmail(e.target.value)}
+                <button className='bg-slate-700 p-3 rounded-lg text-white uppercase hover:opacity-95 disabled:opacity-85'>Sign up</button>
+            </form>
+            <div className='flex gap-2 my-3 mx-4'>
+                <p className='font-semibold'>have an account?</p>
+                <Link to="/Signin">
+                    <span className='text-blue-700 font-serif'>Signin</span>
+                </Link>
 
-                    />
-                </div>
-            </form> */}
-
-<form >
-<label htmlFor='Enter Name :'>
-          Enter Your name :
-          <input type="text" name='name' />
-        </label><br/>
-        <label> Enter Your email : <input name='email' type="text" /></label><br/>
-        <label> Enter Your Password : <input name='password' type="password" /></label>
-        <br />
-
-        <button type="submit" className="btn btn-success w-100 rounded-0">
-                    Sign Up
-                </button>
-</form>
-
-
+            </div>
         </div>
     )
 }
