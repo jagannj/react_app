@@ -1,5 +1,4 @@
 // import{configureStore} from "@reduxjs/toolkit";
-import userdataReducer from "./userSlice"
 
 // export const store = configureStore({
 //     // reducer is provider , this object store data
@@ -12,13 +11,30 @@ import userdataReducer from "./userSlice"
 
 // ====================================================================================
 
-import{configureStore} from "@reduxjs/toolkit";
+import{configureStore, combineReducers} from "@reduxjs/toolkit";
+import {persistReducer, persistStore} from "redux-persist";
+import userdataReducer from "./userSlice"
+import storage from "redux-persist/lib/storage";
+const rootReducer  = combineReducers({user: userdataReducer
+
+});
+const persistConfig = {
+    // key is defined as key value pair any define
+    key:'root',
+    version:1,
+    storage
+}
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 export const store = configureStore({
-    reducer:{
-        user:userdataReducer
-    },
+    // reducer:{
+    //     // user:userdataReducer
+    //     persistedReducer
+    // },
+    reducer: persistedReducer,
     middleware:(getDefaultMiddleware) => getDefaultMiddleware({
         serializableCheck:false
     })
 })
+
+export const persistor = persistStore(store)
 
