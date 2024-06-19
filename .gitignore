@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 node_modules
+=======
+# dependencies
+/node_modules
+>>>>>>> 40d9bd70565d4dd0801a2e9b05476067a8d7f2fe
